@@ -17,7 +17,11 @@ const findSteps = id => {
 };
 
 const add = ({ scheme_name }) => {
-	return db("schemes").insert({ scheme_name });
+    return db("schemes")
+    .insert({ scheme_name })
+    .then(([id]) => {
+        return findById(id);
+    });
 };
 
 const update = ({ scheme_name }, id) => {

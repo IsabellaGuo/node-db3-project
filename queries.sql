@@ -17,7 +17,7 @@ WHERE o.OrderDate < "2012-08-09"
 
 -- Display the name and quantity of the products ordered in order with Id 10251. Sort by ProductName. Shows 3 records.
 
-SELECT p.ProductName, od.Quantity 
+SELECT p.ProductName, od.Quantity, od.orderId
 FROM "Order" o 
 JOIN OrderDetail od
 ON o.Id = od.OrderId
